@@ -6,9 +6,11 @@ const Modal = ({ isOpen, handleModalOpening }) => {
   }
 
   return (
-    <div>
-      <button onClick={handleModalOpening}>X</button>
-      <p>MODALE</p>
+    <div className="flex-modal">
+      <div className="modal">
+        <button onClick={handleModalOpening}>X</button>
+        <p>MODALE</p>
+      </div>
     </div>
   );
 };

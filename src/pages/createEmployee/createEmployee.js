@@ -1,13 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import Modal from "../../components/Modal/Modal";
+// import Modal from "../../components/Modal/Modal";
+import Modal from "eloradelpierre_p14-modal/dist/Modal";
+import DatePicker from "react-date-picker";
 
 const CreateEmployee = ({ addEmployee }) => {
   const [newEmployee, setNewEmployee] = useState([
     {
       firstName: "",
-      lasteName: "",
+      lastName: "",
       birthDate: "",
       startDate: "",
       street: "",
@@ -24,7 +26,7 @@ const CreateEmployee = ({ addEmployee }) => {
     setIsOpen(true);
   };
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   const handleModalOpening = () => {
     setIsOpen(!isOpen);
@@ -57,7 +59,7 @@ const CreateEmployee = ({ addEmployee }) => {
             Last Name
           </label>
           <input
-            onChange={(e) => setNewEmployee({ ...newEmployee, lasteName: e.target.value })}
+            onChange={(e) => setNewEmployee({ ...newEmployee, lastName: e.target.value })}
             className="input-field"
             required
             type="text"
@@ -70,6 +72,10 @@ const CreateEmployee = ({ addEmployee }) => {
           <label htmlFor="birth-date" className="input-label" type="text">
             Date of Birth
           </label>
+          <DatePicker
+            value={newEmployee.birthDate}
+            onChange={(value) => setNewEmployee({ ...newEmployee, birthDate: value })}
+          />
           {/* DATE PICKER */}
         </div>
 
@@ -77,6 +83,7 @@ const CreateEmployee = ({ addEmployee }) => {
           <label htmlFor="start-date" className="input-label" type="text">
             Start Date
           </label>
+          <DatePicker onChange={(value) => setNewEmployee({ ...newEmployee, startDate: value })} />
           {/* DATE PICKER */}
         </div>
 
