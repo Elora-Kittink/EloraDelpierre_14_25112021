@@ -6,8 +6,8 @@ const EmployeeList = ({ employees }) => {
 
   const headArray = [
     { title: "First Name", category: "firstName" },
-    { title: "Last Name", category: "startDate" },
-    { title: "Start Date", category: "lastName" },
+    { title: "Last Name", category: "lastName" },
+    { title: "Start Date", category: "startDate" },
     { title: "Department", category: "department" },
     { title: "Date of Birth", category: "birthDate" },
     { title: "Street", category: "street" },
@@ -19,11 +19,14 @@ const EmployeeList = ({ employees }) => {
   const rowsArray = [];
 
   employees.forEach((employee) => {
+    const formatedBirthDate = employee.birthDate.toLocaleDateString("en-US");
+    const formatStartDate = employee.startDate.toLocaleDateString("en-US");
+
     rowsArray.push([
       { cellValue: employee.firstName, category: "firstName" },
       { cellValue: employee.lastName, category: "lastName" },
-      { cellValue: employee.startDate, category: "startDate" },
-      { cellValue: employee.birthDate, category: "birthDate" },
+      { cellValue: formatStartDate, category: "startDate" },
+      { cellValue: formatedBirthDate, category: "birthDate" },
       { cellValue: employee.department, category: "department" },
       { cellValue: employee.street, category: "street" },
       { cellValue: employee.city, category: "city" },

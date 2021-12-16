@@ -4,24 +4,26 @@ import { useState } from "react";
 // import Modal from "../../components/Modal/Modal";
 import Modal from "eloradelpierre_p14-modal/dist/Modal";
 import DatePicker from "react-date-picker";
+import Dropdown from "react-dropdown";
+import { states, departments } from "../../components/data/data";
+// import Select from "react-select";
 
 const CreateEmployee = ({ addEmployee }) => {
-  const [newEmployee, setNewEmployee] = useState([
-    {
-      firstName: "",
-      lastName: "",
-      birthDate: "",
-      startDate: "",
-      street: "",
-      city: "",
-      state: "",
-      zipCode: "",
-      department: "",
-    },
-  ]);
+  const [newEmployee, setNewEmployee] = useState({
+    firstName: "",
+    lastName: "",
+    birthDate: "",
+    startDate: "",
+    street: "",
+    city: "",
+    state: "",
+    zipCode: "",
+    department: "",
+  });
 
   const handleAddEmployee = (e) => {
     e.preventDefault();
+    console.log(newEmployee);
     addEmployee(newEmployee);
     setIsOpen(true);
   };
@@ -74,17 +76,21 @@ const CreateEmployee = ({ addEmployee }) => {
           </label>
           <DatePicker
             value={newEmployee.birthDate}
+            format="dd-MM-y"
             onChange={(value) => setNewEmployee({ ...newEmployee, birthDate: value })}
           />
-          {/* DATE PICKER */}
         </div>
 
         <div className="input">
           <label htmlFor="start-date" className="input-label" type="text">
             Start Date
           </label>
-          <DatePicker onChange={(value) => setNewEmployee({ ...newEmployee, startDate: value })} />
-          {/* DATE PICKER */}
+          <DatePicker
+            dateFormat="dd/MM/yyyy"
+            value={newEmployee.startDate}
+            format="dd-MM-y"
+            onChange={(value) => setNewEmployee({ ...newEmployee, startDate: value })}
+          />
         </div>
 
         <div className="input">
@@ -119,7 +125,11 @@ const CreateEmployee = ({ addEmployee }) => {
           <label className="input-label" type="text" htmlFor="state">
             State
           </label>
-          {/* DROPDOWN */}
+          <Dropdown
+            options={states}
+            placeholder={states[0].name}
+            onChange={(e) => setNewEmployee({ ...newEmployee, state: e.value })}
+          />
         </div>
 
         <div className="input">
@@ -140,7 +150,11 @@ const CreateEmployee = ({ addEmployee }) => {
           <label required className="input-label" htmlFor="department">
             Department
           </label>
-          {/* DROPDOWN */}
+          <Dropdown
+            options={departments}
+            placeholder={departments[0].name}
+            onChange={(e) => setNewEmployee({ ...newEmployee, department: e.value })}
+          />
         </div>
 
         <button type="submit" className="btn">
