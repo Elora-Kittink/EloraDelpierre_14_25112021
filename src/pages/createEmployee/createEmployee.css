@@ -1,0 +1,65 @@
+.createEmployee {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form {
+  background-color: #ffcb9a;
+  height: 600px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 15px;
+  border: 4px solid #116466;
+}
+
+h1 {
+  color: #2c3531;
+}
+
+h2 {
+  color: #116466;
+}
+
+.input-label {
+  margin: 10px;
+}
+
+.input-field {
+  border-radius: 3px;
+  border: 2px solid #2c3531;
+  height: 25px;
+}
+
+.arrowClassName {
+  text-decoration: none;
+}
+
+.menuClassName {
+  border: 2px solid #2c3531;
+  border-radius: 3px;
+  height: 60px;
+  overflow-y: scroll;
+}
+
+.placeholderClassName {
+  border: 2px solid #2c3531;
+  border-radius: 3px;
+  background-color: white;
+  width: 250px;
+}
+
+.controlClassName {
+  text-decoration: none;
+}
+
+.saveBtn {
+  background-color: white;
+  color: #116466;
+  border: 2px solid #116466;
+  width: 80px;
+  height: 30px;
+}

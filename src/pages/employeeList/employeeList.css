@@ -1,0 +1,30 @@
+.rrtable {
+  background-color: #ffcb9a;
+  border: 5px solid #116466;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 10px;
+}
+
+.rrtable-table {
+  border: 2px solid #116466;
+  background-color: #d1e8e2;
+}
+
+.rrtable-row-cell {
+  background-color: #d1e8e2;
+}
+
+.rrtable-header-input {
+  border: 2px solid #116466;
+  border-radius: 5px;
+  width: 150px;
+  height: 30px;
+  margin: 5px;
+}
+
+.rrtable-header-input-select {
+  border: 2px solid #116466;
+  border-radius: 5px;
+  margin: 5px;
+}

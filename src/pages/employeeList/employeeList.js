@@ -1,5 +1,6 @@
 import React from "react";
 import { Table } from "react-redux-table";
+import "./employeeList.css";
 
 const EmployeeList = ({ employees }) => {
   console.log(employees);
@@ -39,7 +40,6 @@ const EmployeeList = ({ employees }) => {
 
   return (
     <div>
-      Liste Employés
       <Table
         headersArray={headArray}
         rowsContent={rowsArray}
