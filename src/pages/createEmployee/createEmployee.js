@@ -20,23 +20,23 @@ const CreateEmployee = ({ addEmployee }) => {
     department: "",
   });
 
+  console.log(newEmployee);
+
+  // validate form and then add the employee and open modal
+
   const handleAddEmployee = (e) => {
     e.preventDefault();
 
     if (document.getElementById("first-name").validity.patternMismatch) {
-      console.log(document.getElementById("first-name").validity.patternMismatch);
       return alert("Champs incorrect");
     }
     if (document.getElementById("last-name").validity.patternMismatch) {
-      console.log("last-name");
       return alert("Champs incorrect");
     }
     if (document.getElementById("street").validity.patternMismatch) {
-      console.log("street");
       return alert("Champs incorrect");
     }
     if (document.getElementById("city").validity.patternMismatch) {
-      console.log("city");
       return alert("Champs incorrect");
     } else {
       addEmployee(newEmployee);
@@ -50,7 +50,6 @@ const CreateEmployee = ({ addEmployee }) => {
     setIsOpen(!isOpen);
   };
 
-  console.log(newEmployee);
   return (
     <div className="createEmployee">
       <h1>HRnet</h1>

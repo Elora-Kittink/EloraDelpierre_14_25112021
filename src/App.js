@@ -7,8 +7,6 @@ import { useState } from "react";
 function App() {
   const [employees, setEmployees] = useState([]);
 
-  console.log(employees);
-
   const addEmployee = (newEmployee) => {
     setEmployees([...employees, newEmployee]);
   };

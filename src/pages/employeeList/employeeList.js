@@ -3,8 +3,6 @@ import { Table } from "react-redux-table";
 import "./employeeList.css";
 
 const EmployeeList = ({ employees }) => {
-  console.log(employees);
-
   const headArray = [
     { title: "First Name", category: "firstName" },
     { title: "Last Name", category: "lastName" },
@@ -35,8 +33,6 @@ const EmployeeList = ({ employees }) => {
       { cellValue: employee.zipCode, category: "zipCode" },
     ]);
   });
-
-  console.log(rowsArray);
 
   return (
     <div>
