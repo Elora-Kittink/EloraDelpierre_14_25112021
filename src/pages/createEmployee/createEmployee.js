@@ -46,9 +46,12 @@ const CreateEmployee = ({ addEmployee }) => {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleModalOpening = () => {
+  const closeModal = () => {
     setIsOpen(!isOpen);
+    console.log(isOpen);
   };
+
+  const modalContent = <p>Employé créé !</p>;
 
   return (
     <div className="createEmployee">
@@ -200,7 +203,7 @@ const CreateEmployee = ({ addEmployee }) => {
         <button type="submit" className="saveBtn">
           Save
         </button>
-        <Modal isOpen={isOpen} handleModalOpening={handleModalOpening} />
+        <Modal isOpen={isOpen} closeModal={closeModal} content={modalContent} />
       </form>
     </div>
   );
